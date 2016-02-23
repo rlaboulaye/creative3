@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
+  <title>Electronics Advisor</title>
+</head>
+<body>
+  <div id='container' class="container-fluid" ng-app='app' ng-controller='mainCtrl'>
+    <div class="row">
+      <col class="col-xs-offset-3 col-xs-6">
+        <h1>Electronics Advisor</h1>
+        <br/><br/>
+      </col>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+          <h4>Search by product name and/or category</h4>
+          <form name='productQuery' ng-submit='search(productQuery)'>
+            <input placeholder='Product Name' ng-model='productQuery.name'/>
+            <select ng-model="productQuery.category">
+              <option value="0" default selected>All Categories</option>
+              <option value="1">3D Printers</option>
+              <option value="2">Desktops</option>
+              <option value="3">Games</option>
+              <option value="4">iPads</option>
+              <option value="5">iPhones</option>
+              <option value="6">Laptops</option>
+              <option value="7">Monitors</option>
+              <option value="8">Networking</option>
+              <option value="9">Phones</option>
+              <option value="10">Printers</option>
+              <option value="11">Tablets</option>
+              <option value="12">TVs</option>
+            </select>
+            <br/><br/>
+            <button class='btn btn-primary' type='submit'>Search</button>
+          </form>
+          <br/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-offset-1 col-xs-4">
+          <h2>Walmart</h2>
+          <div ng-repeat='product in productsW'>
+            <product product='product' />
+          </div>
+        </div>
+        <div class="col-xs-offset-2 col-xs-4">
+          <h2>Best Buy</h2>
+          <div ng-repeat='product in productsB'>
+            <product product='product' />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio controls autoplay id = "music">
+    <source src="Chopin.mp3" type="audio/mpeg">
+  </audio>
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script type='text/javascript' src='controller.js'></script>
+
+</body>
+</html>

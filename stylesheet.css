@@ -1,0 +1,19 @@
+#container {
+  min-height: 600px;
+  text-align: center;
+}
+
+.productImage {
+  max-width: 250px;
+}
+
+.boxColor {
+  border: 1px solid #666699;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: white;
+}
+
+#music {
+  
+}
