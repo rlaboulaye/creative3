@@ -84,6 +84,7 @@ var app = angular.module('app', []).controller('mainCtrl', function($scope) {
       urlW = "http://api.walmartlabs.com/v1/search?" + nameW + "format=json&categoryId=" + categoryW + "&apiKey=ph7azxukzfkf3trxc2zs4e9m";
       console.log(urlB);
       console.log(urlW);
+      // We had to use $.ajax instead of $http because the Best Buy is only compatible with ajax
       $.ajax({
         method: 'GET',
         url:  urlB,
@@ -135,6 +136,7 @@ var app = angular.module('app', []).controller('mainCtrl', function($scope) {
         }
       }
       );
+      // We had to use $.ajax instead of $http because the Walmart is only compatible with ajax
       $.ajax({
         url: urlW,
         dataType: 'jsonp',
